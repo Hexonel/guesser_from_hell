@@ -17,19 +17,16 @@ def create_hints(number, max, diff):
                         f"(Hint: Now it is between 1 and {max}):" )
         else:
             hints.append(f"\nTry to guess my number. (Hint: It is between 1 and {max}): ")
-
         if number > int(max/2):
             word = 'bigger'
         else:
             word = 'equal or smaller'
         hints.append(f"\nNope, try again. (Hint: It is {word} than {int(max/2)}): ")
-
         if number % 2 == 0:
             value = 'even'
         else:
             value = 'odd'
         hints.append(f"\nYou've got one last shot. (Hint: It is {value}!): ")
-
         if max != 30:
             hints.append("Bonus round, try not to waste it (You should be ashamed if you expected more hints...): ")
     return hints
