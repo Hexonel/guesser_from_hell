@@ -10,8 +10,6 @@ print(
 
 ###############################################################################################################""")
 
-# print(os.getcwd())
-# /Users/zonx/Desktop/Python/github/guesser_from_hell
 info = './difficulties.json'
 data = './scores.json'
 with open(info) as f:
