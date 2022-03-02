@@ -5,8 +5,8 @@
         "minus": 0, 
         "messages": {
             "1": "\nIs this what's called a beginner's luck?", 
-            "2": "\nGood job! That was a 50/50 chance!", 
-            "3": "\nNot bad!", 
+            "2": "\nGood job! Luck is still on your side!", 
+            "3": "\nNot bad!",
             "4": "\nClose call. I'll give you a point for not giving up!"
         }
     }, 
