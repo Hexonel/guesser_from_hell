@@ -1,4 +1,4 @@
-#! usr/local/env python3
+#! /usr/bin/env python3
 # numberGuesser.py - The most advanced number guesser! Can it get upgraded? Probably.
 import random, json
 import functions as func
@@ -10,6 +10,8 @@ print(
 
 ###############################################################################################################""")
 
+# print(os.getcwd())
+# /Users/zonx/Desktop/Python/github/guesser_from_hell
 info = './difficulties.json'
 data = './scores.json'
 with open(info) as f:
@@ -48,6 +50,8 @@ while True:
         if diff_input == 'evil' or diff_input == 'satan':
             number = random.randint(1, max_number)
             hints = func.create_hints(number, max_number, diff_input)   # Because number changes each round
+        if i == len(hints)-1:
+            print(f"The number was {number}.")
     if users[name] >= 15:
         print("\nYou have gained a total of 15 Points. \nYou've UNLOCKED 'evil' and 'satan' modes!")
         difficulties = ["baby", "medium", "impossible", "evil", "satan"]
