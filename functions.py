@@ -3,7 +3,7 @@ import sys, json
 
 
 def create_hints(number, max, diff):
-    if diff == 'satan':
+    if diff == 'satan':     # satan is a special snowflake
         hints = [
             f"Why the fuck did you summon me... But sure, if you win, you'll get tons of points!"
             "\nTry your worst, I'll even give you a hint:\nI bet it's not bigger than {max} hahahaha: ", 
@@ -11,7 +11,7 @@ def create_hints(number, max, diff):
             "Saya bahkan tidak tahu apakah ini berarti apa-apa: "
         ]
     else:
-        hints = []
+        hints = []      # a list of hints, depending on the number and the mode
         if diff == 'evil':
             hints.append(f"The number changes every round and you lose points if you're wrong!"
                         f"(Hint: Now it is between 1 and {max}):" )
@@ -35,21 +35,21 @@ def create_hints(number, max, diff):
 def valid_number(value, max):
         while True:
             try:
-                if value.lower() == "quit":
+                if value.lower() == "quit":     # first if, so it won't consider this a ValueError
                     quit = input("Do you want to pussy out? (yes/no): ")
                     if quit == "yes":
                         print("Come try me again.")
                         sys.exit()
-                elif int(value) > max or int(value) < 1:
+                elif int(value) > max or int(value) < 1:    # this is 2nd since 0 is still a number, and it can fuck it up.
                     value = input(f"The number is out of range. Try something between 1 and {max}: ")
-                elif isinstance(int(value), int):
+                elif isinstance(int(value), int):       # check if it's a number
                     return int(value)
             except ValueError:
                 value = input("\nType a number.\nAnd don't be a smartass and write numbers as words...."
                     f"\nPick something between 1 and {max}, or else you'll need to scroll up for the hints lol: ")
 
 
-def choose_diff(diff_list):
+def choose_diff(diff_list):     # takes a list and asks to choose from it
     while True:
         prompt = input(f"Choose a difficulty ({' / '.join(diff_list)}): ").lower()
         if prompt not in diff_list:
@@ -58,8 +58,8 @@ def choose_diff(diff_list):
             return prompt
 
 
-def change_diff(diff_list, same):
-    diff_list.remove(same)
+def change_diff(diff_list, same):       # takes a list and your current mode
+    diff_list.remove(same)          # removes the current mode from the list, because it's not an option to change to
     prompt = input(f"\nWould you like to change difficulty? ({' / '.join(diff_list)}): ")
     while True:
         if prompt in diff_list:
@@ -72,15 +72,15 @@ def change_diff(diff_list, same):
     return prompt
         
 
-def retry(data, file):
+def retry(data, file):      # takes a dictionary and a file
     retry = input("\nDo you want to continue? (yes/no): ").lower()
     while True:
         if retry == "yes":
             return None
         elif retry == "no":
             print("\n\nWhatever.")
-            with open(file, 'w') as f:
-                json.dump(data, f)
+            with open(file, 'w') as f:      # write mode, so the file is empty
+                json.dump(data, f)          # but the dict was being updated all the time
             sys.exit()
         retry = input("\nIt is a simple yes or no question for fuck's sake."
                       "Do you want to keep having fun? (yes/no): ")
