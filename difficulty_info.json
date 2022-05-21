@@ -1,0 +1,52 @@
+{
+    "baby": {
+        "points": 1,
+        "max": 5,
+        "minus": 0,
+        "msg": {
+            "0": "\nMaybe this is too easy for you?", 
+            "1": "\nGood job! That's the number!", 
+            "2": "\nWow, I wonder how you got that one right."
+        }
+    },
+    "medium": {
+        "points": 2,
+        "max": 10,
+        "minus": 0,
+        "msg": {
+            "0": "\nIs this what's called a beginner's luck?", 
+            "1": "\nGreat job! You're getting better at this game!", 
+            "2": "\nNot bad!"
+        }
+    },
+    "impossible": {
+        "points": 5,
+        "max": 20,
+        "minus": 0,
+        "msg": {
+            "0": "\nImpossible? More like I'm possible. ba dum tss..", 
+            "1": "\nExcellent job!! You understood the hints!", 
+            "2": "\nYou've worked so hard for this. Congrats!"
+        }
+    },
+    "evil": {
+        "points": 10,
+        "max": 20,
+        "minus": 1,
+        "msg": {
+            "0": "\nHoly shit! You totally nailed it!", 
+            "1": "\nWell done! The satisfaction of doing your best is a great reward!", 
+            "2": "\nYou are a proof that good things come to those who are willing to sacrifice to reach a worthwhile goal!"
+        }
+    },
+    "satan": {
+        "points": 100,
+        "max": 30,
+        "minus": 5, 
+        "msg": {
+            "0": "\nYOU CHEATING SON OF A BITCH!!!", 
+            "1": "\nY soy rebelde, cuando est\u00e1s ganando!", 
+            "2": "\nThat wasn't even a hint... Ugh..."
+        }
+    }
+}
